@@ -63,7 +63,7 @@ const InputForm: FC = () => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
-    const data: IPositionsRequest = { gridSize, zombie, commands, creatures };
+    const data: IPositionsRequest = { gridSize, zombie, commands: commands.toUpperCase(), creatures };
     try {
       const positionsResponse = await getPositions(data);
       const { zombies, creatures: aliveCreatures } = positionsResponse;
